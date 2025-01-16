@@ -75,13 +75,13 @@ if [ -x "$(command -v pacman)" ]; then
             wget https://pkg.devkitpro.org/devkitpro-keyring.pkg.tar.xz
             pacman -U ./devkitpro-keyring.pkg.tar.xz
             rm -f ./devkitpro-keyring.pkg.tar.xz
-            echo "[dkp-libs]\n" > /etc/pacman.conf
-            echo "Server = https://pkg.devkitpro.org/packages\n" > /etc/pacman.conf
-            echo "\n" > /etc/pacman.conf
-            echo "[dkp-linux] \n" > /etc/pacman.conf
-            echo "Server = https://pkg.devkitpro.org/packages/linux/$arch/ \n" > /etc/pacman.conf
-            echo "[dkp-windows] \n" > /etc/pacman.conf
-            echo "Server = https://pkg.devkitpro.org/packages/windows/$arch/ \n" > /stc/pacman.conf
+            echo "[dkp-libs]\n" >> /etc/pacman.conf
+            echo "Server = https://pkg.devkitpro.org/packages\n" >> /etc/pacman.conf
+            echo "\n" >> /etc/pacman.conf
+            echo "[dkp-linux] \n" >> /etc/pacman.conf
+            echo "Server = https://pkg.devkitpro.org/packages/linux/$arch/ \n" >> /etc/pacman.conf
+            echo "[dkp-windows] \n" >> /etc/pacman.conf
+            echo "Server = https://pkg.devkitpro.org/packages/windows/$arch/ \n" >> /stc/pacman.conf
             pacman -Syu
         fi
     fi
